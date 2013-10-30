@@ -10,4 +10,15 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) UILabel IBOutlet *currentTrackLabel;
+@property (strong, nonatomic) UILabel IBOutlet *currentPlaybackStateLabel;
+@property (strong, nonatomic) UILabel IBOutlet *playCountLabel;
+@property (strong, nonatomic) UILabel IBOutlet *skipCountLabel;
+
+-(IBAction)playPause:(id)sender;
+-(IBAction)next:(id)sender;
+-(IBAction)prev:(id)sender;
+
+-(void)updateNowPlaying;
+
 @end

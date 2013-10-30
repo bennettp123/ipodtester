@@ -7,13 +7,41 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // get the iPod player
+    _myPlayer = [MPMusicPlayerController iPodMusicPlayer];
+    
+    // register for player events
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    
+    [notificationCenter addObserver:self selector:@selector(handle_NowPlayingItemChanged) name:MPMusicPlayerControllerNowPlayingItemDidChangeNotification object:_myPlayer];
+    
+    [notificationCenter addObserver:self selector:@selector(handle_PlaybackStateChanged) name:MPMusicPlayerControllerPlaybackStateDidChangeNotification object:_myPlayer];
+    
+    if (_myPlayer) {
+        [_myPlayer beginGeneratingPlaybackNotifications];
+    }
+    
     return YES;
+}
+
+- (void)handle_NowPlayingItemChanged
+{
+    ViewController *viewController = (ViewController *)self.window.rootViewController;
+    [viewController updateNowPlaying];
+    
+}
+
+-(void)handle_PlaybackStateChanged
+{
+    [self handle_NowPlayingItemChanged];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
