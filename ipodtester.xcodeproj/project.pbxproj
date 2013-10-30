@@ -199,6 +199,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Bennett Perkins";
 				TargetAttributes = {
+					913842361820C8B100F1E6A6 = {
+						DevelopmentTeam = J9K6TXK6ZW;
+					};
 					913842571820C8B100F1E6A6 = {
 						TestTargetID = 913842361820C8B100F1E6A6;
 					};
@@ -378,6 +381,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ipodtester/ipodtester-Prefix.pch";
 				INFOPLIST_FILE = "ipodtester/ipodtester-Info.plist";
@@ -391,6 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ipodtester/ipodtester-Prefix.pch";
 				INFOPLIST_FILE = "ipodtester/ipodtester-Info.plist";
